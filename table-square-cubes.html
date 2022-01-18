@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Table it's Squares and Cubes</title>
+</head>
+
+<header>
+    <nav>
+        <div class="navbar">
+            <p><a href="index.html" id="home" title="Home">Developer Bros</a></p>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fa fa-bars" id="bars"></i>
+                <i class="fa fa-times" id="cross"></i>
+            </label>
+            <ul>
+                <li><a href="index.html" id="main">Home</a></li>
+                <li><a href="table-square-cubes.html" class="active">Table Square-Cube</a></li>
+                <li><a href="Largest-number-indicator.html">Largest Number Indicator</a></li>
+                <li><a href="Factorial.html">Factorial Calculator</a></li>
+                <li><a href="sum-avg.html">Sum, Avg. Calculator</a></li>
+                <li><a href="return-calculator.html">Return Calculator</a></li>
+                <li><a href="integer-counter.html">Integer Counter</a></li>
+                <li><a href="Fibbonaci.html">Fibonacci Calculator</a></li>
+                <li><a href="Show-Date-and-time.html">Show Date and time</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="input">
+        <h1>Squares and Cubes</h1><br>
+        <label style="font-size: 18px;" id="label">Choose where to print table of numbers from 5 to 15 and their squares and cubes</label><br>
+        <input type="button" id="btn_append" value="Show Here" />
+        <input type="button" id="btn_alert" value="Alert It" style="margin-bottom: 20px;" />
+
+        <div id="results"></div>
+    </div>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("btn_append").onclick = addTable;
+
+            document.getElementById("btn_alert").onclick = alertTable;
+        };
+
+        function addTable() {
+            var table = document.createElement("table"),
+                row, cell, i;
+
+            table.id = "results_table";
+
+            for (i = 5; i <= 15; i++) {
+                row = table.insertRow(-1);
+
+                cell = row.insertCell(-1);
+                cell.innerHTML = i;
+
+                cell = row.insertCell(-1);
+                cell.innerHTML = i * i;
+
+                cell = row.insertCell(-1);
+                cell.innerHTML = i * i * i;
+            }
+
+            var results = document.getElementById("results");
+            if (results.firstChild) {
+                results.removeChild(results.firstChild);
+            }
+            results.appendChild(table);
+        }
+
+        function alertTable() {
+            var ret = "";
+            for (var i = 5; i <= 15; i++) {
+                ret += i + "           " + i * i + "           " + i * i * i + "\n";
+            }
+            alert(ret);
+        }
+    </script>
+</body>
+
+<footer>
+    <div class="footer">
+        <p>Made with love by
+            <a href="https://www.instagram.com/developer_bros/" class="bros">Developer-Bros</a> <a href="https://github.com/ShivamKumarSah" class="ourid">(Shivam</a> & <a href="https://github.com/ShubhamKumarSah" class="ourid">Shubham)</a></a>
+        </p>
+    </div>
+</footer>
+
+</html>
