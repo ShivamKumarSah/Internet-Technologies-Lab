@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Largest Number Indicator</title>
+</head>
+
+<header>
+    <nav>
+        <div class="navbar">
+            <p><a href="index.html" id="home" title="Home">Developer Bros</a></p>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fa fa-bars" id="bars"></i>
+                <i class="fa fa-times" id="cross"></i>
+            </label>
+            <ul>
+                <li><a href="index.html" id="main">Home</a></li>
+                <li><a href="table-square-cubes.html">Table Square-Cube</a></li>
+                <li><a href="Largest-number-indicator.html" class="active">Largest Number Indicator</a></li>
+                <li><a href="Factorial.html">Factorial Calculator</a></li>
+                <li><a href="sum-avg.html">Sum, Avg. Calculator</a></li>
+                <li><a href="return-calculator.html">Return Calculator</a></li>
+                <li><a href="integer-counter.html">Integer Counter</a></li>
+                <li><a href="Fibbonaci.html">Fibonacci Calculator</a></li>
+                <li><a href="Show-Date-and-time.html">Show Date and time</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="input">
+        <h1>Largest Number Indicator</h1><br>
+
+        <form action="#" onsubmit="return calculate()">
+            <label for="Number" id="label">Enter three numbers to find the largest</label><br>
+            <div class="horalign">
+                <input type="number" id="Number1" class="Number" placeholder="Number 1"><br>
+                <input type="number" id="Number2" class="Number" placeholder="Number 2"><br>
+                <input type="number" id="Number3" class="Number" placeholder="Number 3"><br>
+            </div>
+            <input type="submit" value="Find Largest" id="button">
+        </form>
+        <p id="resultset">Among these three numbers <span id="given_number" style="color: #ff1f8f; font-weight: bold;"></span> the largest number is <span id="result" style="color: #ff1f8f; font-weight: bold;"></span></p>
+        </span>
+        </p>
+    </div>
+</body>
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+<script>
+    function calculate() {
+        let number1 = document.getElementById("Number1").value;
+        let number2 = document.getElementById("Number2").value;
+        let number3 = document.getElementById("Number3").value;
+        let given_number = document.getElementById("given_number");
+        let result = document.getElementById("result");
+        let resultset = document.getElementById("resultset");
+
+        resultset.style.opacity = "1";
+
+        given_number.innerHTML = number1 + ", " + number2 + ", and " + number3;
+
+        const largest = count(number1, number2, number3);
+        result.innerHTML = largest;
+
+        return false;
+    }
+
+    function count(num1, num2, num3) {
+        num1 = parseInt(num1, 10);
+        num2 = parseInt(num2, 10);
+        num3 = parseInt(num3, 10);
+
+        let largest = 0;
+        if (num1 > num2 && num1 > num3) {
+            largest = num1;
+        } else if (num2 > num1 && num2 > num3) {
+            largest = num2;
+        } else if (num3 > num1 && num3 > num1) {
+            largest = num3;
+        }
+
+
+        return largest;
+    }
+</script>
+
+<footer>
+    <div class="footer">
+        <p>Made with love by
+            <a href="https://www.instagram.com/developer_bros/" class="bros">Developer-Bros</a> <a href="https://github.com/ShivamKumarSah" class="ourid">(Shivam</a> & <a href="https://github.com/ShubhamKumarSah" class="ourid">Shubham)</a></a>
+        </p>
+    </div>
+</footer>
+
+</html>
