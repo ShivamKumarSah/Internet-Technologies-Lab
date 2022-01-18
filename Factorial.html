@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Factorial Calculator</title>
+</head>
+
+<header>
+    <nav>
+        <div class="navbar">
+            <p><a href="index.html" id="home" title="Home">Developer Bros</a></p>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fa fa-bars" id="bars"></i>
+                <i class="fa fa-times" id="cross"></i>
+            </label>
+            <ul>
+                <li><a href="index.html" id="main">Home</a></li>
+                <li><a href="table-square-cubes.html">Table Square-Cube</a></li>
+                <li><a href="Largest-number-indicator.html">Largest Number Indicator</a></li>
+                <li><a href="Factorial.html" class="active">Factorial Calculator</a></li>
+                <li><a href="sum-avg.html">Sum, Avg. Calculator</a></li>
+                <li><a href="return-calculator.html">Return Calculator</a></li>
+                <li><a href="integer-counter.html">Integer Counter</a></li>
+                <li><a href="Fibbonaci.html">Fibonacci Calculator</a></li>
+                <li><a href="show-date-and-time.html">Show Date and time</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="input">
+        <h1>Factorial Calculator</h1><br>
+        <form action="#" onsubmit="return calculate()">
+            <label for="Number" id="label">Enter a number to calculate Factorial</label><br>
+            <input type="number" name="Number" id="Number" placeholder="i.e. 6"><br>
+            <input type="submit" value="Calculate" id="button">
+        </form>
+        <p id="resultset">Factorial of <span id="given_number" style="color: #ff1f8f; font-weight: bold;"></span> is <span id="result" style="color: #ff1f8f; font-weight: bold;"></span></p>
+    </div>
+</body>
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+<script>
+    function calculate() {
+        let number = document.getElementById("Number").value;
+        let given_number = document.getElementById("given_number");
+        let result = document.getElementById("result");
+        let resultset = document.getElementById("resultset");
+
+        resultset.style.opacity = "1";
+        console.log(number);
+        given_number.innerHTML = number;
+
+        const factres = fact(number);
+        result.innerHTML = factres;
+
+        return false;
+    }
+
+    function fact(number) {
+        let temp = number;
+        let show = number;
+
+        while (temp != 1) {
+            temp--;
+            number *= temp;
+        }
+
+        return number;
+    }
+</script>
+
+<footer>
+    <div class="footer">
+        <p>Made with love by
+            <a href="https://www.instagram.com/developer_bros/" class="bros">Developer-Bros</a> <a href="https://github.com/ShivamKumarSah" class="ourid">(Shivam</a> & <a href="https://github.com/ShubhamKumarSah" class="ourid">Shubham)</a></a>
+        </p>
+    </div>
+</footer>
+
+</html>
